@@ -2,7 +2,7 @@
 
 ## Overview
 
-**BioBalance** (also known as **Aqua Smart**) is an eco-friendly aquarium system with real-time monitoring and adaptive controls. The project aims to create a smart aquarium that maintains optimal conditions for aquatic life through the integration of various sensors and automated systems.
+**AquaSmart** is an eco-friendly aquarium system with real-time monitoring and adaptive controls. The project aims to create a smart aquarium that maintains optimal conditions for aquatic life through the integration of various sensors and automated systems.
 
 ## Project Roles
 
