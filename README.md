@@ -19,20 +19,18 @@
   - Nitrate Sensor: Measures nitrate levels in the water.
   - Salinity Sensor: Checks the salt concentration in the water.
   - Water Clarity Sensor: Assesses the clarity of the water.
-- **Spectrum LED Lights**: Provides customizable lighting for the aquarium.
+- **LED Lights**: Provides customizable lighting for the aquarium.
 - **Motor & Servo**: Controls movement and operations within the aquarium.
 - **Weight Scale**: Measures the weight of the aquarium components.
 - **Water Pump**: Manages water flow within the aquarium.
 - **Medium-Sized Fish Tank**: The main habitat for the aquatic life.
 - **Waterproof Casing**: Protects electronic components from water damage.
 - **UV Lights**: Sterilizes water to ensure a healthy environment.
-- **Waterproof Camera**: Optionally used for computer vision and monitoring aquatic life.
+- **Waterproof Camera**: Used for monitoring aquatic life.
 
 ## Software Components
 
 - **Python**: Primary programming language used for system integration and sensor data processing.
-- **Computer Vision**: (If using a camera) Analyzes the visual data from the aquarium for additional monitoring capabilities.
-
 ## Features
 
 - Real-time monitoring of water parameters (pH, temperature, nitrate, salinity, and clarity).
