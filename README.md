@@ -25,8 +25,8 @@
 - **Water Pump**: Manages water flow within the aquarium.
 - **Medium-Sized Fish Tank**: The main habitat for the aquatic life.
 - **Waterproof Casing**: Protects electronic components from water damage.
-- **UV Lights**: Sterilizes water to ensure a healthy environment.
-- **Waterproof Camera**: Used for monitoring aquatic life.
+- **Lights**: Sterilizes water to ensure a healthy environment.
+- **Camera**: Used for monitoring aquatic life.
 
 ## Software Components
 
