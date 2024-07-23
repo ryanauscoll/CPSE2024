@@ -1,4 +1,4 @@
-# BioBalance
+# AquaSmart
 
 ## Overview
 
