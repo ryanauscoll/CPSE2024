@@ -43,5 +43,5 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/BioBalance.git
-   cd BioBalance
+   git clone https://github.com/ryanauscoll/CPSE2024.git
+   cd AquaSmart
