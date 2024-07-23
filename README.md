@@ -15,7 +15,6 @@
 
 - **Raspberry Pi**: Central processing unit for the system.
 - **Sensors**:
-  - pH Sensor: Monitors the acidity/alkalinity of the water.
   - Temperature Sensor: Tracks the water temperature.
   - Nitrate Sensor: Measures nitrate levels in the water.
   - Salinity Sensor: Checks the salt concentration in the water.
