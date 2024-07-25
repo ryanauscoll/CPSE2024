@@ -1,0 +1,123 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.home-text003 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text004 {
+  text-decoration: none;
+}
+.home-text005 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text006 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text010 {
+  text-decoration: none;
+}
+.home-text011 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text016 {
+  text-align: center;
+}
+.home-text017 {
+  text-align: center;
+}
+.home-text033 {
+  font-size: 48px;
+}
+.home-text035 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text037 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text051 {
+  font-size: 48px;
+}
+.home-text052 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text056 {
+  text-align: center;
+}
+.home-text058 {
+  text-align: center;
+}
+.home-text060 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text061 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text066 {
+  font-size: 48px;
+}
+.home-text071 {
+  font-size: 48px;
+}
+.home-text074 {
+  font-size: 48px;
+}
+.home-text080 {
+  text-align: center;
+}
+.home-text084 {
+  font-size: 48px;
+}
+.home-text085 {
+  font-style: normal;
+  font-weight: 600;
+}
+.home-text086 {
+  text-align: center;
+}
+.home-text087 {
+  text-align: center;
+}
+.home-text089 {
+  text-align: center;
+}
+.home-text092 {
+  text-align: center;
+}
+.home-text098 {
+  text-align: left;
+}
+.home-text102 {
+  text-align: center;
+}
+.home-text104 {
+  text-align: left;
+}
+.home-text106 {
+  text-align: left;
+}
+.home-text107 {
+  text-align: left;
+}
+.home-text112 {
+  text-align: center;
+}
+.home-text113 {
+  text-align: center;
+}
+.home-text121 {
+  fill: var(--dl-color-theme-neutral-dark);
+  color: var(--dl-color-theme-neutral-dark);
+}
