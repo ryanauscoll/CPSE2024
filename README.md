@@ -1,40 +1,14 @@
-# AquaSmart
+# AquaSmart Website/App Integration
 
 ## Overview
 
 **AquaSmart** is an eco-friendly aquarium system with real-time monitoring and adaptive controls. The project aims to create a smart aquarium that maintains optimal conditions for aquatic life through the integration of various sensors and automated systems.
 
-## Project Roles
-
-- **Software & Web Development**: Zach, Gautam, Ryan
-- **CAD Design**: James
-- **Hardware Development**: All team members
-- **Scrum Master**: Zach
-
-## Hardware Components
-
-- **Raspberry Pi**: Central processing unit for the system.
-- **Sensors**:
-  - Temperature Sensor: Tracks the water temperature.
-  - Nitrate Sensor: Measures nitrate levels in the water.
-  - Salinity Sensor: Checks the salt concentration in the water.
-  - Water Clarity Sensor: Assesses the clarity of the water.
-- **LED Lights**: Provides customizable lighting for the aquarium.
-- **Motor & Servo**: Controls movement and operations within the aquarium.
-- **Weight Scale**: Measures the weight of the aquarium components.
-- **Water Pump**: Manages water flow within the aquarium.
-- **Medium-Sized Fish Tank**: The main habitat for the aquatic life.
-- **Waterproof Casing**: Protects electronic components from water damage.
-- **Lights**: Sterilizes water to ensure a healthy environment.
-- **Camera**: Used for monitoring aquatic life.
-
-## Software Components
-
 - **Python**: Primary programming language used for system integration and sensor data processing.
 ## Features
 
-- Real-time monitoring of water parameters (pH, temperature, nitrate, salinity, and clarity).
-- Adaptive control of aquarium conditions through automated systems (lighting, water flow, etc.).
+- Real-time monitoring of water parameters remotely (temperature, salinity, and clarity).
+- Adaptive control of aquarium conditions through automated systems (lighting, salt control, food, etc.).
 - Eco-friendly design ensuring a healthy and sustainable environment for aquatic life.
 
 ## Getting Started
