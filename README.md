@@ -2,7 +2,7 @@
 
 ## Overview
 
-**AquaSmart** is an eco-friendly aquarium system with real-time monitoring and adaptive controls. The project aims to create a smart aquarium that maintains optimal conditions for aquatic life through the integration of various sensors and automated systems.
+**AquaSmart** is a smart aquarium that enables fish owners to automate the maintenance process by utilizing remote monitoring and control.
 
 - **Python**: Primary programming language used for system integration and sensor data processing.
 ## Features
