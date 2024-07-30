@@ -1,0 +1,48 @@
+.features7-layout226 {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+.features7-max-width {
+  align-self: flex-start;
+}
+.features7-text {
+  display: inline-block;
+  text-align: center;
+}
+.features7-text1 {
+  display: inline-block;
+  text-align: center;
+}
+.features7-text2 {
+  display: inline-block;
+  text-align: center;
+}
+.features7-text3 {
+  display: inline-block;
+  text-align: center;
+}
+.features7-text4 {
+  display: inline-block;
+  text-align: center;
+}
+.features7-text5 {
+  display: inline-block;
+  text-align: center;
+}
+@media(max-width: 991px) {
+  .features7-content {
+    align-items: center;
+  }
+  .features7-content1 {
+    align-items: center;
+  }
+  .features7-content2 {
+    align-items: center;
+  }
+}
