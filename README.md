@@ -11,6 +11,8 @@
 - Adaptive control of aquarium conditions through automated systems (lighting, salt control, food, etc.).
 - Eco-friendly design ensuring a healthy and sustainable environment for aquatic life.
 
+[Live Demo](https://aquasmart.app/)!
+
 ## Getting Started
 
 1. **Clone the Repository**:
