@@ -10,7 +10,7 @@ const Login = (props) => {
   return (
     <div className="login-container">
       <Helmet>
-        <title>Login - Wee Knowledgeable Gnu</title>
+        <title>Login | AquaSmart</title>
         <meta property="og:title" content="Login - Wee Knowledgeable Gnu" />
       </Helmet>
       <Navbar8
