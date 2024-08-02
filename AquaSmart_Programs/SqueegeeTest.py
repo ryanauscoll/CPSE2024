@@ -7,6 +7,16 @@ servo = 25
 
 # more info at http://abyz.me.uk/rpi/pigpio/python.html#set_servo_pulsewidth
 
+try:
+    pwm = pigpio.pi()
+    if not pwm.connected:
+        raise RuntimeError('Failed to connect to pigpiod daemon.')
+except Exception as e:
+    print(f"Error: {e}")
+    sys.exit(1)
+
+
+#
 pwm = pigpio.pi()
 pwm.set_mode(servo, pigpio.OUTPUT)
 
