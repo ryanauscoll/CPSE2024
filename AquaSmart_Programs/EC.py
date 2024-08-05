@@ -2,7 +2,7 @@ import time
 import Adafruit_ADS1x15
 
 # Create an ADS1115 ADC instance
-adc = Adafruit_ADS1x15.ADS1115()
+adc = Adafruit_ADS1x15.ADS1115(busnum=1)
 
 # Choose gain
 GAIN = 1  # 1x gain +/- 4.096V
