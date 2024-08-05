@@ -25,26 +25,39 @@ def setup():
 	GPIO.setup(FeederRelayPin, GPIO.OUT)
 	GPIO.output(FeederRelayPin, GPIO.HIGH)
 
-def loop():
-	while True:
+
+def feed(duration = 30,freq = 28800):
+	if (time.time() == lastMotorRunTime + freq or lastMotorRunTime == 0):
 		#'...relayd on'
 		
-		duration=int(input("Input servings of food: "))
-		freq = int(input('Input feeding frequency: '))
+		#duration=int(input("Input servings of food: "))
+		#freq = int(input('Input feeding frequency: '))
 		GPIO.output(FeederRelayPin, GPIO.LOW)
 		print('feeding')
 		time.sleep(duration)
 		#'relay off...'
 		GPIO.output(FeederRelayPin, GPIO.HIGH)
 		print('feeding complete')
-		time.sleep(freq)
+		lastMotorRunTime = time.time()
+		#time.sleep(freq)
 
+
+
+def feedNow(duration = 30):
+		GPIO.output(FeederRelayPin, GPIO.LOW)
+		print('feeding')
+		time.sleep(duration)
+		#'relay off...'
+		GPIO.output(FeederRelayPin, GPIO.HIGH)
+		print('feeding complete')
+
+		
 def destroy():
 	GPIO.output(FeederRelayPin, GPIO.HIGH)
 if __name__ == '__main__':     # Program start from here
 	setup()
 	try:
-		loop()
+		feed(duration,freq)
 	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
 		destroy()
 
