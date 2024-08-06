@@ -1,44 +1,23 @@
-# import smbus
-# import time
-
-
-# bus = smbus.SMBus(1)
-
-
-# address = 0x48
-
-
-# def read_analog(channel):
-#     if channel < 0 or channel > 3:
-#         return -1
-#     bus.write_byte(address, channel)
-#     value = bus.read_byte(address)
-#     return value
-
-# while True:
-#     turbidity_value = read_analog(0)
-#     print(f"Turbidity Analog Value: {turbidity_value}")
-#     time.sleep(1)
-
-
-import smbus
 import time
+import board
+import busio
+from adafruit_ads1x15 import ADS1115
 
-# Initialize I2C bus
-bus = smbus.SMBus(1)
+# Create I2C bus object
+i2c = busio.I2C(board.SCL, board.SDA)
 
-# PCF8591 address
-pcf8591_address = 0x48  # Ensure this is the correct address
+# Create ADS1115 ADC object
+ads = ADS1115.ADS1115(i2c)
 
-def read_pcf8591_analog(channel):
-    if channel < 0 or channel > 3:
-        return -1
-    bus.write_byte(pcf8591_address, channel)
-    value = bus.read_byte(pcf8591_address)
-    return value
+# Set the gain (you may need to adjust this depending on your sensor and range)
+GAIN = 1
+
+def read_sensor():
+    # Read the ADC value from channel 0
+    adc_value = ads.read_adc(0, gain=GAIN)
+    return adc_value
 
 while True:
-    # Read value from AIN3
-    value = read_pcf8591_analog(3)  # Change channel to 3
-    print(f"Analog Value from AIN3: {value}")
+    turbidity = read_sensor()
+    print(f"Turbidity Sensor Reading: {turbidity}")
     time.sleep(1)
