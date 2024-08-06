@@ -1,0 +1,64 @@
+/* team-members.css */
+.team-members-section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 50px;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Ensure the text is centered */
+  }
+  
+  .team-members-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure the items are displayed in a single row */
+    justify-content: center; /* Center the items horizontally */
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  }
+  
+  .testimonial-item {
+    flex: 0 0 auto; /* Prevent the items from shrinking */
+    max-width: 250px;
+    text-align: center;
+  }
+  
+  .img-thumb {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .img-thumb img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .info {
+    margin-top: 20px;
+  }
+  
+  .text_dark {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .media-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .media-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  

@@ -1,0 +1,94 @@
+/* dashboard.css */
+.dashboard-container {
+  padding: 20px;
+  background-color: #ffffff; /* Alice Blue background */
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e90ff; /* Dodger Blue color */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mode-selector,
+.wiper-frequency-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mode-selector label,
+.wiper-frequency-selector label {
+  font-weight: bold;
+}
+
+.mode-selector select,
+.wiper-frequency-selector select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="number"] {
+  width: 100px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.MuiTableContainer-root {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MuiTable-root {
+  min-width: 650px;
+}
+
+.MuiTableHead-root {
+  background-color: #ffffff; /* Dodger Blue color */
+}
+
+.MuiTableCell-head {
+  color: white;
+  font-weight: bold;
+}
+
+.MuiTableRow-root:nth-of-type(odd) {
+  background-color: #ffffff; /* Light blue */
+}
+
+.MuiTableRow-root:nth-of-type(even) {
+  background-color: #f2f9ff; /* Very light blue */
+}
+
+.MuiTableCell-root {
+  color: #333; /* Darker text color */
+}
+
+.chart-container {
+  margin-top: 20px;
+}
+
+.chart-container > div {
+  margin-bottom: 20px;
+}

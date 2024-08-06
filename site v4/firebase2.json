@@ -1,0 +1,36 @@
+{
+    "sensorData": {
+      "sensor1": {
+        "id": "sensor1",
+        "name": "Temperature",
+        "value": "23.5",
+        "timestamp": 1628778678123,
+        "mode": "medium",
+        "wiperFrequency": "daily"
+      },
+      "sensor2": {
+        "id": "sensor2",
+        "name": "Electrical Conductivity",
+        "value": "7.4",
+        "timestamp": 1628778678123,
+        "mode": "low",
+        "wiperFrequency": "weekly"
+      },
+      "sensor3": {
+        "id": "sensor3",
+        "name": "Salinity",
+        "value": "7.4",
+        "timestamp": 1628778678123,
+        "mode": "low",
+        "wiperFrequency": "weekly"
+      },
+      "sensor4": {
+        "id": "sensor4",
+        "name": "Turbidity",
+        "value": "7.4",
+        "timestamp": 1628778678123,
+        "mode": "low",
+        "wiperFrequency": "weekly"
+      }
+    }
+  }

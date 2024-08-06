@@ -1,0 +1,16 @@
+.sign-in3-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.sign-in3-text {
+  display: inline-block;
+  text-align: center;
+}
+.sign-in3-text1 {
+  display: inline-block;
+  align-self: center;
+}

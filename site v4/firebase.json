@@ -1,0 +1,20 @@
+{
+    "sensorData": {
+      "sensor1": {
+        "id": "sensor1",
+        "name": "Temperature Sensor",
+        "value": "23.5",
+        "timestamp": 1628778678123,
+        "mode": "medium",
+        "wiperFrequency": "daily"
+      },
+      "sensor2": {
+        "id": "sensor2",
+        "name": "pH Sensor",
+        "value": "7.4",
+        "timestamp": 1628778678123,
+        "mode": "low",
+        "wiperFrequency": "weekly"
+      }
+    }
+  }

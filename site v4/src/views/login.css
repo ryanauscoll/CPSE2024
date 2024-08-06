@@ -1,0 +1,63 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-text {
+  display: inline-block;
+  text-decoration: none;
+}
+.login-text01 {
+  display: inline-block;
+}
+.login-text02 {
+  display: inline-block;
+  text-decoration: none;
+}
+.login-text03 {
+  display: inline-block;
+}
+.login-text04 {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+}
+.login-text05 {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+}
+.login-text06 {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+}
+.login-text07 {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+}
+.login-text08 {
+  display: inline-block;
+}
+.login-text09 {
+  display: inline-block;
+}
+.login-text10 {
+  display: inline-block;
+}
+.login-text11 {
+  display: inline-block;
+}
+.login-text12 {
+  display: inline-block;
+}
+.login-text13 {
+  display: inline-block;
+}
+.login-text14 {
+  display: inline-block;
+}
