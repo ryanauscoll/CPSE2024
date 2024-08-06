@@ -1,23 +1,20 @@
 import time
-import board
-import busio
-from adafruit_ads1x15 import ADS1115
+import Adafruit_ADS1x15
 
-# Create I2C bus object
-i2c = busio.I2C(board.SCL, board.SDA)
+adc = Adafruit_ADS1x15.ADS1115(busnum=1)
 
-# Create ADS1115 ADC object
-ads = ADS1115.ADS1115(i2c)
-
-# Set the gain (you may need to adjust this depending on your sensor and range)
-GAIN = 1
-
-def read_sensor():
-    # Read the ADC value from channel 0
-    adc_value = ads.read_adc(0, gain=GAIN)
-    return adc_value
+def read_turbidity_sensor():
+    # Read the analog input from channel 0
+    value = adc.read_adc(0, gain=1)
+    # Convert the raw ADC value to voltage
+    voltage = value * (4.096 / 32767.0)
+    # You may need to calibrate or process the voltage value based on your turbidity sensor's characteristics
+    turbidity = voltage  # Adjust this based on your calibration
+    return turbidity
 
 while True:
-    turbidity = read_sensor()
-    print(f"Turbidity Sensor Reading: {turbidity}")
+    turbidity = read_turbidity_sensor()
+    print("Turbidity Reading: {:.2f}".format(turbidity))
+
+    # Delay
     time.sleep(1)
