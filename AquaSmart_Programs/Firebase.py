@@ -4,9 +4,9 @@ from firebase_admin import credentials
 from firebase_admin import db
 import random
 import time
-
+from TempSensor import temp
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('/home/aquasmart/Documents/AquaSmart_Programs/aquasmartsensordata-firebase-adminsdk-m2mu2-d4d6abd1d1.json')
+cred = credentials.Certificate('/home/pi/Documents/AquaSmart_Programs/aquasmartsensordata-firebase-adminsdk-m2mu2-d4d6abd1d1.json')
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://aquasmartsensordata-default-rtdb.firebaseio.com"
@@ -17,7 +17,7 @@ print(ref.get())
 def get_sensor_data():
     # Simulate sensor data; replace this with actual sensor reading logic
     return {
-        'temperature': round(random.uniform(20.0, 30.0), 2),
+        'temperature': round(temp(), 2),
         'humidity': round(random.uniform(40.0, 60.0), 2)
     }
 

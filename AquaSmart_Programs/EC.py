@@ -11,7 +11,7 @@ CALIBRATION_B = -183.11
 
 def read_ec_sensor():
     # Read the analog input from channel 0
-    value = adc.read_adc(0, gain=1)
+    value = adc.read_adc(1, gain=1)
     # Convert the raw ADC value to voltage
     voltage = value * (4.096 / 32767.0)
     # Apply calibration
@@ -19,9 +19,11 @@ def read_ec_sensor():
     return conductivity
 
 #prints out output values
+'''
 while True:
     ec_conductivity = read_ec_sensor()
     print("EC Conductivity: {:.2f} µS/cm".format(ec_conductivity))
 
     #delay
     time.sleep(1)
+'''

@@ -32,9 +32,6 @@ def tempcond_to_sal(temp, cond):
     c3 = -0.00000069698
     c4 = 0.0000000010031
 
-    if temp < 0 or temp > 30:
-        return "Out of range"
-
     if cond <= 0:
         return "Out of range"
 
@@ -47,12 +44,7 @@ def tempcond_to_sal(temp, cond):
 
     sal = a0 + r2 * (a1 + r2 * (a2 + r2 * (a3 + r2 * (a4 + r2 * a5)))) + ds
 
-    if sal < 2.0:
-        return "The calculated salinity is below 2.0 ppt, which is below the scale"
-    elif sal > 42.0:
-        return "The calculated salinity is above 42.0 ppt, which is above the scale"
-    else:
-        return round_value(sal, 2) #change this for rounding
+    return round_value(sal, 2) #change this for rounding
     
 
 
@@ -68,8 +60,8 @@ def tempcond_to_sal(temp, cond):
 # salinity = tempcond_to_sal(temperature, conductivity)
 # print(f"Salinity: {salinity} ppt")
 
-def output():
+def realSalinity():
     temperature = temp()
     conductivity = read_ec_sensor()
     salinity = tempcond_to_sal(temperature, conductivity)
-    return f"Salinity: {salinity} ppt"
+    return salinity
