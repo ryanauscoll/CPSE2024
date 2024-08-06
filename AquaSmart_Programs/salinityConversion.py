@@ -1,4 +1,9 @@
+# using https://www.fivecreeks.org/monitor/sal.shtml calculation method
+
+
 import math
+from TempSensor import temp
+from EC import read_ec_sensor
 
 def round_value(val, places):
     """Rounds the value to the specified number of decimal places."""
@@ -43,15 +48,28 @@ def tempcond_to_sal(temp, cond):
     sal = a0 + r2 * (a1 + r2 * (a2 + r2 * (a3 + r2 * (a4 + r2 * a5)))) + ds
 
     if sal < 2.0:
-        return "Under scale"
+        return "The calculated salinity is below 2.0 ppt, which is below the scale"
     elif sal > 42.0:
-        return "Over scale"
+        return "The calculated salinity is above 42.0 ppt, which is above the scale"
     else:
-        return round_value(sal, 1)
+        return round_value(sal, 2) #change this for rounding
+    
 
-# Example usage
-temperature = float(input("Enter water temperature (C): "))
-conductivity = float(input("Enter conductivity (uS/cm): "))
 
-salinity = tempcond_to_sal(temperature, conductivity)
-print(f"Salinity: {salinity} ppt")
+
+
+# # User input test
+# temperature = float(input("Enter water temperature (C): "))
+# conductivity = float(input("Enter conductivity (uS/cm): "))
+
+# temperature = temp()
+# conductivity = read_ec_sensor()
+
+# salinity = tempcond_to_sal(temperature, conductivity)
+# print(f"Salinity: {salinity} ppt")
+
+def output():
+    temperature = temp()
+    conductivity = read_ec_sensor()
+    salinity = tempcond_to_sal(temperature, conductivity)
+    return f"Salinity: {salinity} ppt"
