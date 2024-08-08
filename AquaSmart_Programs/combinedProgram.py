@@ -9,6 +9,7 @@ from FeederMotor import *
 from Squeegee import *
 from turbidity import *
 from TDSTest import *
+from YT_stream import *
 # Fetch the service account key JSON file contents
 cred = credentials.Certificate('/home/pi/Documents/AquaSmart_Programs/aquasmartsensordata-firebase-adminsdk-m2mu2-d4d6abd1d1.json')
  
@@ -22,7 +23,9 @@ ecRef = db.reference('/sensorData/sensor2')
 salRef = db.reference('/sensorData/sensor3')
 turbRef = db.reference('/sensorData/sensor4')
 TDSRef = db.reference('/sensorData/sensor5')
-#print(ref.get())
+feedRef = db.reference('/modes/feeder')
+wiperRef = db.reference('/modes/wiperFrequency')
+print(wiperRef.get())
  
 def get_tempData():
     # Simulate sensor data; replace this with actual sensor reading logic
@@ -72,9 +75,9 @@ def get_TurbData():
 def get_TDSData():
     # Simulate sensor data; replace this with actual sensor reading logic
     #print("got sensor data")
-    print(read_tds_sensor())
+    #print(read_tds_sensor())
     return {
-        'id': 'sensor4',
+        'id': 'sensor5',
         'mode': 'medium',
         'name': 'Total Dissolved Solids Sensor',
         'timestamp': int(time.time() * 1000),
@@ -95,10 +98,29 @@ def push_sensor_data_to_firebase():
        # time.sleep(0.01)  # Wait for 1 
        #second
 
+def wipeSide():
+    checkInstantAction = wiperRef.get()['instantAction']
+    timestamp = wiperRef.get()['timestamp']
+    if checkInstantAction == 'cleanNow':
+        cleanSideNow(timestamp)
+        wiperRef.update({
+        'instantAction': 'dontClean'})
+        
+
+def feedNow():
+    checkInstantAction = feedRef.get()['instantAction']
+    timestamp = feedRef.get()['timestamp']
+    if checkInstantAction == 'feedNow':
+        runFeederNow(timestamp)
+        feedRef.update({
+        'instantAction': 'dontFeed'})
 def loop():
     while True:
         push_sensor_data_to_firebase()
-        #feed()
-        #cleanSideNow()
+        print(feedRef.get())
+        print(wiperRef.get())
+        #liveStream()
+        feedNow()
+        wipeSide()
 
 loop()

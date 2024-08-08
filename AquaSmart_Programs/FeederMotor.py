@@ -20,10 +20,10 @@ duration = servings* 20
 '''
 
 
-def setup():
-	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	GPIO.setup(FeederRelayPin, GPIO.OUT)
-	GPIO.output(FeederRelayPin, GPIO.HIGH)
+
+GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
+GPIO.setup(FeederRelayPin, GPIO.OUT)
+GPIO.output(FeederRelayPin, GPIO.HIGH)
 
 
 def feed(duration = 30,freq = 28800):
@@ -43,13 +43,13 @@ def feed(duration = 30,freq = 28800):
 
 
 
-def feedNow(duration = 30):
+def runFeederNow(timestamp, duration = 30):		
 		GPIO.output(FeederRelayPin, GPIO.LOW)
 		print('feeding')
-		time.sleep(duration)
 		#'relay off...'
-		GPIO.output(FeederRelayPin, GPIO.HIGH)
-		print('feeding complete')
+		if(time.time() >= timestamp + duration):
+			GPIO.output(FeederRelayPin, GPIO.HIGH)
+			print('feeding complete')
 
 		
 def destroy():

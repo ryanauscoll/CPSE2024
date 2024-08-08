@@ -48,7 +48,9 @@ def read_tds_sensor():
     return tds_value
 
 # Read and print the TDS sensor value
+'''
 while True:
     tds_value = read_tds_sensor()
     print("TDS Sensor Value (ppm):", tds_value)
     time.sleep(1)
+'''

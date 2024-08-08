@@ -12,9 +12,11 @@ def read_turbidity_sensor():
     turbidity = voltage  # Adjust this based on your calibration
     return turbidity
 #
-#while True:
- #   turbidity = read_turbidity_sensor()
-  #  print("Turbidity Reading: {:.2f}".format(turbidity))
+'''
+while True:
+    turbidity = read_turbidity_sensor()
+    print("Turbidity Reading: {:.2f}".format(turbidity))
 
     # Delay
-   # time.sleep(1)
+    time.sleep(1)
+'''
