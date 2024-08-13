@@ -337,7 +337,7 @@ const Home = (props) => {
         feature4Description={
           <fragment>
             <span className="home-text48 thq-body-small">
-              Four 1080p cameras providing constant streaming
+              Live camera providing constant streaming on the dashboard
             </span>
           </fragment>
         }
