@@ -8,7 +8,6 @@ import Features7 from '../components/features7';
 import Features11 from '../components/features11';
 import Steps2 from '../components/steps2';
 import Features23 from '../components/features23';
-import TeamMembers from '../components/TeamMembers'; // Import the TeamMembers component
 import './home.css';
 
 const Home = (props) => {
@@ -358,7 +357,6 @@ const Home = (props) => {
           </fragment>
         }
       ></Features23>
-      <TeamMembers /> {/* Add the TeamMembers component */}
     </div>
   );
 };
