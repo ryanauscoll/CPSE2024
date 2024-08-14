@@ -10,6 +10,7 @@ from Squeegee import *
 from turbidity import *
 from TDSTest import *
 from YT_stream import *
+from WaterIn import *
 # Fetch the service account key JSON file contents
 cred = credentials.Certificate('/home/pi/Documents/AquaSmart_Programs/aquasmartsensordata-firebase-adminsdk-m2mu2-d4d6abd1d1.json')
  
@@ -25,7 +26,8 @@ turbRef = db.reference('/sensorData/sensor4')
 TDSRef = db.reference('/sensorData/sensor5')
 feedRef = db.reference('/modes/feeder')
 wiperRef = db.reference('/modes/wiperFrequency')
-print(wiperRef.get())
+waterChangerRef = db.reference('/modes/waterChange')
+
  
 def get_tempData():
     # Simulate sensor data; replace this with actual sensor reading logic
@@ -114,13 +116,22 @@ def feedNow():
         runFeederNow(timestamp)
         feedRef.update({
         'instantAction': 'dontFeed'})
+        
+def changeWaterNow():
+    checkInstantAction = waterChangerRef.get()['instantAction']
+    timestamp = waterChangerRef.get()['timestamp']
+    if checkInstantAction == 'changeWaterNow':
+        runWaterChangerNow(timestamp)
+        waterChangerRef.update({
+        'instantAction': 'dontChangeWater'})
+        
+        
 def loop():
     while True:
         push_sensor_data_to_firebase()
-        print(feedRef.get())
-        print(wiperRef.get())
         #liveStream()
         feedNow()
         wipeSide()
+        changeWaterNow()
 
 loop()

@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
 import time
 
-FeederRelayPin = 22   
+waterChangerPin = 16   
 
 
 #default values
-duration= 30 #seconds
+duration= 10 #seconds
 freq= 28800 #seconds (3 times a day)
 
 '''
@@ -22,8 +22,8 @@ duration = servings* 20
 
 
 GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-GPIO.setup(FeederRelayPin, GPIO.OUT)
-GPIO.output(FeederRelayPin, GPIO.HIGH)
+GPIO.setup(waterChangerPin, GPIO.OUT)
+GPIO.output(waterChangerPin, GPIO.HIGH)
 
 '''
 def feed(duration = 30,freq = 28800):
@@ -43,17 +43,17 @@ def feed(duration = 30,freq = 28800):
 '''
 
 
-def runFeederNow(timestamp, duration = 30):		
-		GPIO.output(FeederRelayPin, GPIO.LOW)
-		print('feeding')
+def runWaterChangerNow(timestamp, duration = 10):		
+		GPIO.output(waterChangerPin, GPIO.LOW)
+		print('changing water')
 		#'relay off...'
 		if(time.time() >= timestamp + duration):
-			GPIO.output(FeederRelayPin, GPIO.HIGH)
-			print('feeding complete')
+			GPIO.output(waterChangerPin, GPIO.HIGH)
+			print('water changing complete')
 
 		
 def destroy():
-	GPIO.output(FeederRelayPin, GPIO.HIGH)
+	GPIO.output(waterChangerPin, GPIO.HIGH)
 if __name__ == '__main__':     # Program start from here
 	try:
 		destroy()

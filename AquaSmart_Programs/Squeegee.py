@@ -4,7 +4,7 @@ import pigpio
 import time
 #from combinedProgram import push_sensor_data_to_firebase
 
-servo = 25
+servo = 26
 
 # more info at http://abyz.me.uk/rpi/pigpio/python.html#set_servo_pulsewidth
 

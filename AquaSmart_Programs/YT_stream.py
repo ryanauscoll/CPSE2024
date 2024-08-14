@@ -9,7 +9,7 @@ command = (
     "rpicam-vid -t 0 -o - --width 854 --height 480 --framerate 24 --g 10 --codec libav "
     "--libav-format mpegts | ffmpeg -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 "
     "-i /dev/zero -f mpegts -i - -vcodec copy -acodec aac -ab 128k -g 10 -strict experimental "
-    "-f flv rtmp://a.rtmp.youtube.com/live2/qwx9-z2am-142q-s95r-392b" # replace KEY
+    "-f flv rtmp://a.rtmp.youtube.com/live2/mhwy-gjum-vkt4-sqwd-49e2" # replace KEY
 )
 '''
 
@@ -24,7 +24,7 @@ def liveStream():
         "rpicam-vid -t 0 -o - --width 854 --height 480 --framerate 24 --g 10 --codec libav "
         "--libav-format mpegts | ffmpeg -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 "
         "-i /dev/zero -f mpegts -i - -b:v 1000k -vcodec libx264 -acodec aac -ab 128k -g 10 -strict experimental "
-        "-f flv rtmp://a.rtmp.youtube.com/live2/qwx9-z2am-142q-s95r-392b" # replace KEY
+        "-f flv rtmp://a.rtmp.youtube.com/live2/mhwy-gjum-vkt4-sqwd-49e2" # replace KEY
     )
 
 
@@ -39,4 +39,4 @@ def liveStream():
     signal.pause()
 
 
-#liveStream()
+liveStream()
