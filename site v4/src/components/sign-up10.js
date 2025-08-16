@@ -1,143 +1,186 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 
-import PropTypes from 'prop-types'
+const ModernLoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
 
-import './sign-up10.css'
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
-const SignUp10 = (props) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login attempt:', formData);
+    // Handle login logic here
+  };
+
   return (
-    <div className="sign-up10-container">
-      <img
-        alt={props.image1Alt}
-        src={props.image1Src}
-        className="sign-up10-sign-up-image thq-img-ratio-16-9"
-      />
-      <div className="sign-up10-container1"></div>
-      <div className="sign-up10-form-root thq-section-padding">
-        <div className="sign-up10-form thq-section-padding">
-          <div className="sign-up10-title-root">
-            <h2>
-              {props.heading1 ?? (
-                <fragment>
-                  <span className="sign-up10-text8 thq-heading-2">
-                    Sign Up for AquaSmart
-                  </span>
-                </fragment>
-              )}
-            </h2>
-            <Link to="/login" className="sign-up10-navlink">
-              <p className="sign-up10-text1 thq-body-large">
-                Already have an account? Sign in
-              </p>
-            </Link>
-          </div>
-          <form className="sign-up10-form1">
-            <div className="sign-up10-email">
-              <label htmlFor="thq-sign-up-10-email" className="thq-body-large">
-                Email
-              </label>
-              <input
-                type="email"
-                id="thq-sign-up-10-email"
-                required="true"
-                placeholder="Email address"
-                className="sign-up10-textinput thq-input thq-body-large"
-              />
-            </div>
-            <div className="sign-up10-password">
-              <div className="sign-up10-textfield">
-                <div className="sign-up10-container2">
-                  <label
-                    htmlFor="thq-sign-up-10-password"
-                    className="thq-body-large"
-                  >
-                    Password
-                  </label>
-                  <div className="sign-up10-hide-password">
-                    <svg viewBox="0 0 1024 1024" className="sign-up10-icon">
-                      <path d="M317.143 762.857l44.571-80.571c-66.286-48-105.714-125.143-105.714-206.857 0-45.143 12-89.714 34.857-128.571-89.143 45.714-163.429 117.714-217.714 201.714 59.429 92 143.429 169.143 244 214.286zM539.429 329.143c0-14.857-12.571-27.429-27.429-27.429-95.429 0-173.714 78.286-173.714 173.714 0 14.857 12.571 27.429 27.429 27.429s27.429-12.571 27.429-27.429c0-65.714 53.714-118.857 118.857-118.857 14.857 0 27.429-12.571 27.429-27.429zM746.857 220c0 1.143 0 4-0.571 5.143-120.571 215.429-240 432-360.571 647.429l-28 50.857c-3.429 5.714-9.714 9.143-16 9.143-10.286 0-64.571-33.143-76.571-40-5.714-3.429-9.143-9.143-9.143-16 0-9.143 19.429-40 25.143-49.714-110.857-50.286-204-136-269.714-238.857-7.429-11.429-11.429-25.143-11.429-39.429 0-13.714 4-28 11.429-39.429 113.143-173.714 289.714-289.714 500.571-289.714 34.286 0 69.143 3.429 102.857 9.714l30.857-55.429c3.429-5.714 9.143-9.143 16-9.143 10.286 0 64 33.143 76 40 5.714 3.429 9.143 9.143 9.143 15.429zM768 475.429c0 106.286-65.714 201.143-164.571 238.857l160-286.857c2.857 16 4.571 32 4.571 48zM1024 548.571c0 14.857-4 26.857-11.429 39.429-17.714 29.143-40 57.143-62.286 82.857-112 128.571-266.286 206.857-438.286 206.857l42.286-75.429c166.286-14.286 307.429-115.429 396.571-253.714-42.286-65.714-96.571-123.429-161.143-168l36-64c70.857 47.429 142.286 118.857 186.857 192.571 7.429 12.571 11.429 24.571 11.429 39.429z"></path>
-                    </svg>
-                    <span className="thq-body-small">Hide</span>
-                  </div>
-                </div>
-                <input
-                  type="password"
-                  id="thq-sign-up-10-password"
-                  required="true"
-                  placeholder="Password"
-                  className="sign-up10-textinput1 thq-input thq-body-large"
-                />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden relative">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
+      <div className="min-h-screen flex">
+        {/* Left Side - Image */}
+        <div className="hidden lg:flex lg:w-1/2 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 z-10"></div>
+          <img
+            src="https://images.unsplash.com/photo-1612519348055-5948319a0714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMjE4MzA5OHw&ixlib=rb-4.0.3&q=80&w=1080"
+            alt="Aquarium with AquaSmart system"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-900/50 z-20"></div>
+        </div>
+
+        {/* Right Side - Login Form */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 relative z-30">
+          <div className="max-w-md w-full">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                AquaSmart
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
+              <p className="text-slate-300">Sign in to your account</p>
+              <div className="mt-4">
+                <span className="text-slate-400">Don't have an account? </span>
+                <button className="text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
+                  Sign up
+                </button>
               </div>
             </div>
-          </form>
-          <button type="submit" className="sign-up10-button thq-button-filled">
-            <span>
-              {props.action1 ?? (
-                <fragment>
-                  <span className="sign-up10-text7 thq-body-small">
-                    Create Account
-                  </span>
-                </fragment>
-              )}
-            </span>
-          </button>
-          <div className="sign-up10-divider">
-            <div className="sign-up10-divider1"></div>
-            <p className="thq-body-large">Or continue with</p>
-            <div className="sign-up10-divider2"></div>
-          </div>
-          <div className="sign-up10-container3">
-            <button
-              aria-label="Sign up with Facebook"
-              className="sign-up10-button1 thq-button-outline"
-            >
-              <svg
-                viewBox="0 0 877.7142857142857 1024"
-                className="sign-up10-icon2"
-              >
-                <path d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"></path>
-              </svg>
-            </button>
-            <button
-              aria-label="Sign up with Google"
-              className="sign-up10-button2 thq-button-outline"
-            >
-              <svg viewBox="0 0 1024 1024" className="sign-up10-icon4">
-                <path d="M522.2 438.8v175.6h290.4c-11.8 75.4-87.8 220.8-290.4 220.8-174.8 0-317.4-144.8-317.4-323.2s142.6-323.2 317.4-323.2c99.4 0 166 42.4 204 79l139-133.8c-89.2-83.6-204.8-134-343-134-283 0-512 229-512 512s229 512 512 512c295.4 0 491.6-207.8 491.6-500.2 0-33.6-3.6-59.2-8-84.8l-483.6-0.2z"></path>
-              </svg>
-            </button>
-            <button
-              aria-label="Sign up with Apple"
-              className="sign-up10-button3 thq-button-outline"
-            >
-              <svg
-                viewBox="0 0 796.0137142857142 1024"
-                className="sign-up10-icon6"
-              >
-                <path d="M796 694.286c-14.286 45.143-37.143 93.143-70.286 142.857-49.143 74.857-98.286 112-146.857 112-19.429 0-45.714-6.286-80-18.286-33.714-12.571-62.857-18.286-86.286-18.286-22.857 0-50.286 6.286-81.143 18.857-31.429 13.143-56.571 19.429-75.429 19.429-58.857 0-115.429-49.714-172-148-55.429-98.286-84-193.714-84-287.429 0-87.429 21.714-158.286 64.571-213.714 42.857-54.857 96.571-82.286 162.286-82.286 28 0 61.143 5.714 101.143 17.143 39.429 11.429 65.714 17.143 78.857 17.143 16.571 0 44-6.286 81.714-19.429 37.714-12.571 70.857-19.429 98.857-19.429 45.714 0 86.286 12.571 121.714 37.143 20 13.714 40 33.143 59.429 57.143-29.714 25.143-51.429 47.429-65.143 67.429-24.571 35.429-37.143 74.857-37.143 118.286 0 46.857 13.143 89.714 39.429 127.429s56.571 61.714 90.286 72zM581.143 24c0 23.429-5.714 49.714-16.571 77.714-11.429 28.571-29.143 54.857-53.143 78.857-20.571 20.571-41.143 34.286-61.714 41.143-13.143 4-32.571 7.429-59.429 9.714 1.143-56.571 16-105.714 44.571-146.857s76.571-69.143 142.857-84.571c1.143 5.143 2.286 9.143 2.857 12.571 0 4 0.571 7.429 0.571 11.429z"></path>
-              </svg>
-            </button>
+
+            {/* Form Container */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl"></div>
+              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl border border-white/10 p-8">
+                <div className="space-y-6">
+                  {/* Email Field */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                      Email
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Password Field */}
+                  <div>
+                    <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
+                      Password
+                    </label>
+                    <div className="relative">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Enter your password"
+                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300 pr-12"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-300 transition-colors"
+                      >
+                        {showPassword ? (
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        ) : (
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Forgot Password */}
+                  <div className="text-right">
+                    <button type="button" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm">
+                      Forgot password?
+                    </button>
+                  </div>
+
+                  {/* Login Button */}
+                  <button
+                    onClick={handleSubmit}
+                    className="w-full py-3 px-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                  >
+                    Sign In
+                  </button>
+
+                  {/* Divider */}
+                  <div className="relative flex items-center justify-center my-6">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-slate-600/50"></div>
+                    </div>
+                    <div className="relative bg-slate-800/50 px-4">
+                      <span className="text-slate-400 text-sm">Or continue with</span>
+                    </div>
+                  </div>
+
+                  {/* Social Login Buttons */}
+                  <div className="grid grid-cols-3 gap-3">
+                    <button
+                      type="button"
+                      className="flex items-center justify-center py-3 px-4 bg-slate-800/50 border border-slate-600/50 rounded-xl hover:bg-slate-700/50 transition-all duration-300 group"
+                    >
+                      <svg className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      className="flex items-center justify-center py-3 px-4 bg-slate-800/50 border border-slate-600/50 rounded-xl hover:bg-slate-700/50 transition-all duration-300 group"
+                    >
+                      <svg className="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      className="flex items-center justify-center py-3 px-4 bg-slate-800/50 border border-slate-600/50 rounded-xl hover:bg-slate-700/50 transition-all duration-300 group"
+                    >
+                      <svg className="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-SignUp10.defaultProps = {
-  action1: undefined,
-  heading1: undefined,
-  image1Alt: 'Aquarium with AquaSmart system',
-  image1Src:
-    'https://images.unsplash.com/photo-1612519348055-5948319a0714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyMjE4MzA5OHw&ixlib=rb-4.0.3&q=80&w=1080',
-}
-
-SignUp10.propTypes = {
-  action1: PropTypes.element,
-  heading1: PropTypes.element,
-  image1Alt: PropTypes.string,
-  image1Src: PropTypes.string,
-}
-
-export default SignUp10
+export default ModernLoginPage;
