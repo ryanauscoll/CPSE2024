@@ -185,7 +185,7 @@ const Home = (props) => {
           </fragment>
         }
         rootClassName="features11-root-class-name"
-        featureImageSrc="https://miro.medium.com/v2/resize:fit:940/1*JqdAGNJI6DW8iuhO5EpbRQ.png"
+        featureImageSrc="/app.png"
         feature1Description={
           <fragment>
             <span className="home-text28 thq-body-large">
